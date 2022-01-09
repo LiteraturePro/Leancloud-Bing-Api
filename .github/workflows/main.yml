@@ -14,6 +14,10 @@ jobs:
       uses: enflo/curl-action@v1.2
       with:
         curl: -X POST https://us-w1-console-api.leancloud.app/1.1/engine/groups/web/production/version?gitTag=${{ github.sha }}&token=${{ secrets.DEPLOY_TOKEN }}
+  access:
+    runs-on: ubuntu-latest
+    steps:
+    - run: sleep 10
     - name: Access to LeanEngine
       uses: enflo/curl-action@v1.2
       with:
