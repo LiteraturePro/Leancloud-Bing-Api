@@ -1,0 +1,21 @@
+# Controls when the action will run. Triggers the workflow on push request for the master branch
+on:
+  push:
+    branches: [ master ]
+  schedule:
+    - cron: '0 6 * * *'
+    
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to LeanEngine
+      uses: enflo/curl-action@v1.2
+      with:
+        curl: -X POST https://us-w1-console-api.leancloud.app/1.1/engine/groups/web/production/version?gitTag=${{ github.sha }}&token=${{ secrets.DEPLOY_TOKEN }}
+    - name: Access to LeanEngine
+      uses: enflo/curl-action@v1.2
+      with:
+        curl: -X GET http://bing-api.avosapps.us/php/
+       
