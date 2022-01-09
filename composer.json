@@ -1,0 +1,16 @@
+{
+    "name": "Bing-Api",
+    "description": "Bing Api Server On Leancloud.",
+    "require": {
+        "php": "7.4.x",
+        "slim/slim": "^3.0",
+        "leancloud/leancloud-sdk": "^0.14",
+        "slim/php-view": "^2.1"
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer"
+        }
+    }
+}
